@@ -7,7 +7,6 @@ import Services from './components/Services'
 import CTABand from './components/CTABand'
 import CaseStudies from './components/CaseStudies'
 import Process from './components/Process'
-import Testimonials from './components/Testimonials'
 import About from './components/About'
 import FAQ from './components/FAQ'
 import ContactForm from './components/ContactForm'
@@ -28,7 +27,6 @@ export default function App() {
         <CTABand />
         <CaseStudies />
         <Process />
-        <Testimonials />
         <About />
         <FAQ />
         <CTABand variant="audit" />
