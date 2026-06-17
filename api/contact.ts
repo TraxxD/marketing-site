@@ -1,20 +1,33 @@
-// Serverless function for Vercel/Netlify — alternative to Web3Forms
+// Serverless function for Vercel/Netlify - alternative to Web3Forms
 // To use this instead of Web3Forms:
-// 1. Set RESEND_API_KEY in your environment variables
+// 1. Set RESEND_API_KEY and CONTACT_EMAIL in your environment variables
 // 2. Update the ContactForm fetch URL to '/api/contact'
 
-interface ContactPayload {
-  name: string
-  email: string
-  phone?: string
-  message?: string
-  website?: string // honeypot
+import { z } from 'zod'
+
+// Server-side validation schema
+const contactSchema = z.object({
+  name: z.string().min(2).max(100),
+  email: z.string().email(),
+  phone: z.string().max(20).optional().or(z.literal('')),
+  message: z.string().max(1000).optional().or(z.literal('')),
+  website: z.string().max(0).optional(),
+})
+
+// Sanitize user input to prevent HTML injection in emails
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;')
 }
 
-// Simple in-memory rate limiter
+// Simple in-memory rate limiter (best-effort on serverless)
 const rateLimitMap = new Map<string, number[]>()
-const RATE_LIMIT_WINDOW = 60_000 // 1 minute
-const RATE_LIMIT_MAX = 3 // max 3 requests per minute per IP
+const RATE_LIMIT_WINDOW = 60_000
+const RATE_LIMIT_MAX = 3
 
 function isRateLimited(ip: string): boolean {
   const now = Date.now()
@@ -28,43 +41,84 @@ function isRateLimited(ip: string): boolean {
 }
 
 export default async function handler(req: Request): Promise<Response> {
-  if (req.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), {
-      status: 405,
-      headers: { 'Content-Type': 'application/json' },
-    })
+  // CORS - only allow requests from our domain
+  const origin = req.headers.get('origin') || ''
+  const allowedOrigins = ['https://ds-marketingroup.com', 'https://www.ds-marketingroup.com']
+  const corsOrigin = allowedOrigins.includes(origin) ? origin : allowedOrigins[0]
+
+  const corsHeaders = {
+    'Content-Type': 'application/json',
+    'Access-Control-Allow-Origin': corsOrigin,
+    'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type',
   }
 
-  // Rate limiting
-  const ip =
-    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
-  if (isRateLimited(ip)) {
+  // Handle preflight
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 204, headers: corsHeaders })
+  }
+
+  if (req.method !== 'POST') {
     return new Response(
-      JSON.stringify({ error: 'Too many requests. Please try again later.' }),
-      { status: 429, headers: { 'Content-Type': 'application/json' } },
+      JSON.stringify({ error: 'Method not allowed' }),
+      { status: 405, headers: corsHeaders },
     )
   }
 
-  const body = (await req.json()) as ContactPayload
+  // Rate limiting (use platform header when available)
+  const ip =
+    req.headers.get('x-real-ip') ||
+    req.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ||
+    'unknown'
+  if (isRateLimited(ip)) {
+    return new Response(
+      JSON.stringify({ error: 'Too many requests. Please try again later.' }),
+      { status: 429, headers: corsHeaders },
+    )
+  }
 
-  // Honeypot check
+  // Validate input server-side
+  let body: z.infer<typeof contactSchema>
+  try {
+    const raw = await req.json()
+    const parsed = contactSchema.safeParse(raw)
+    if (!parsed.success) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid input' }),
+        { status: 400, headers: corsHeaders },
+      )
+    }
+    body = parsed.data
+  } catch {
+    return new Response(
+      JSON.stringify({ error: 'Invalid request body' }),
+      { status: 400, headers: corsHeaders },
+    )
+  }
+
+  // Honeypot check - silently accept to not alert bots
   if (body.website) {
-    // Silently accept to not alert bots
-    return new Response(JSON.stringify({ success: true }), {
-      headers: { 'Content-Type': 'application/json' },
-    })
+    return new Response(
+      JSON.stringify({ success: true }),
+      { headers: corsHeaders },
+    )
   }
 
   const RESEND_API_KEY = process.env.RESEND_API_KEY
-  // TODO: Replace with your verified Resend domain email
   const YOUR_EMAIL = process.env.CONTACT_EMAIL || 'support@ds-marketingroup.com'
 
   if (!RESEND_API_KEY) {
     return new Response(
       JSON.stringify({ error: 'Email service not configured' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } },
+      { status: 500, headers: corsHeaders },
     )
   }
+
+  // Sanitize all user input before embedding in HTML
+  const safeName = escapeHtml(body.name)
+  const safeEmail = escapeHtml(body.email)
+  const safePhone = escapeHtml(body.phone || 'Not provided')
+  const safeMessage = escapeHtml(body.message || 'No message')
 
   try {
     // 1. Notification email to you
@@ -77,13 +131,13 @@ export default async function handler(req: Request): Promise<Response> {
       body: JSON.stringify({
         from: 'DS Marketing <noreply@ds-marketingroup.com>',
         to: YOUR_EMAIL,
-        subject: `New Lead: ${body.name}`,
+        subject: `New Lead: ${safeName.substring(0, 100)}`,
         html: `
           <h2>New Contact Form Submission</h2>
-          <p><strong>Name:</strong> ${body.name}</p>
-          <p><strong>Email:</strong> ${body.email}</p>
-          <p><strong>Phone:</strong> ${body.phone || 'Not provided'}</p>
-          <p><strong>Message:</strong> ${body.message || 'No message'}</p>
+          <p><strong>Name:</strong> ${safeName}</p>
+          <p><strong>Email:</strong> ${safeEmail}</p>
+          <p><strong>Phone:</strong> ${safePhone}</p>
+          <p><strong>Message:</strong> ${safeMessage}</p>
         `,
       }),
     })
@@ -98,9 +152,9 @@ export default async function handler(req: Request): Promise<Response> {
       body: JSON.stringify({
         from: 'DS Marketing <noreply@ds-marketingroup.com>',
         to: body.email,
-        subject: "Thanks for reaching out — we'll be in touch!",
+        subject: "Thanks for reaching out - we'll be in touch!",
         html: `
-          <h2>Hi ${body.name},</h2>
+          <h2>Hi ${safeName},</h2>
           <p>Thanks for contacting DS Marketing. We've received your message and will get back to you within 24 hours.</p>
           <p>In the meantime, if you have any urgent questions, feel free to reply to this email.</p>
           <br/>
@@ -110,13 +164,14 @@ export default async function handler(req: Request): Promise<Response> {
       }),
     })
 
-    return new Response(JSON.stringify({ success: true }), {
-      headers: { 'Content-Type': 'application/json' },
-    })
+    return new Response(
+      JSON.stringify({ success: true }),
+      { headers: corsHeaders },
+    )
   } catch {
     return new Response(
       JSON.stringify({ error: 'Failed to send email' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } },
+      { status: 500, headers: corsHeaders },
     )
   }
 }

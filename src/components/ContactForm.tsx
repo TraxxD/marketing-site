@@ -269,8 +269,11 @@ export default function ContactForm() {
               </button>
 
               <p className="text-center text-xs text-text-muted">
-                Your information is safe with us. We'll never share your details
-                with third parties.
+                By submitting this form, you agree to our{' '}
+                <a href="/privacy" className="text-bronze underline hover:text-gold">
+                  Privacy Policy
+                </a>
+                . We'll never share your details with third parties.
               </p>
             </form>
           </div>
