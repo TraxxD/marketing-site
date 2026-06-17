@@ -2,7 +2,6 @@ import Nav from './components/Nav'
 import Hero from './components/Hero'
 import ValueProp from './components/ValueProp'
 import Services from './components/Services'
-import SocialProof from './components/SocialProof'
 import About from './components/About'
 import FAQ from './components/FAQ'
 import ContactForm from './components/ContactForm'
@@ -17,7 +16,6 @@ export default function App() {
         <Hero />
         <ValueProp />
         <Services />
-        <SocialProof />
         <About />
         <FAQ />
         <ContactForm />
