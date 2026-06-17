@@ -111,7 +111,7 @@ export default function Hero() {
 
       <div className="relative mx-auto flex min-h-screen max-w-7xl items-center px-4 sm:px-6 lg:px-8">
         <div className="grid w-full gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* Left — copy */}
+          {/* Left - copy */}
           <div className="flex flex-col justify-center">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-bronze/20 bg-bronze/10 px-4 py-1.5 text-sm text-bronze">
               <TrendingUp size={14} />
@@ -126,7 +126,7 @@ export default function Hero() {
             </h1>
 
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-taupe sm:text-xl">
-              From ads and SEO to content, branding, and web design — we help
+              From ads and SEO to content, branding, and web design - we help
               businesses attract higher-value clients and turn attention into
               revenue.
             </p>
@@ -165,7 +165,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right — animated stats cards */}
+          {/* Right - animated stats cards */}
           <div className="hidden items-center justify-center lg:flex">
             <div className="relative" style={{ perspective: '1000px' }}>
               {/* Shadow card behind */}

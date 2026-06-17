@@ -4,19 +4,19 @@ import { ChevronDown } from 'lucide-react'
 const faqs = [
   {
     q: 'How much do your services cost?',
-    a: 'Every business is different, so we tailor our packages to your specific goals and budget. We\'ll discuss your needs on a free consultation call and provide a transparent proposal — no hidden fees, no surprises.',
+    a: 'Every business is different, so we tailor our packages to your specific goals and budget. We\'ll discuss your needs on a free consultation call and provide a transparent proposal - no hidden fees, no surprises.',
   },
   {
     q: 'Is DS Marketing the right fit for my business?',
-    a: 'If you\'re a business looking to attract higher-quality clients, strengthen your brand, and scale with proven marketing strategies, we\'re built for you. We work across industries — from professional services to e-commerce and beyond.',
+    a: 'If you\'re a business looking to attract higher-quality clients, strengthen your brand, and scale with proven marketing strategies, we\'re built for you. We work across industries - from professional services to e-commerce and beyond.',
   },
   {
     q: 'What happens after I reach out?',
-    a: 'We\'ll schedule a brief discovery call to understand your goals, current challenges, and budget. From there, we\'ll put together a custom strategy and proposal. No pressure, no obligations — just a clear path forward.',
+    a: 'We\'ll schedule a brief discovery call to understand your goals, current challenges, and budget. From there, we\'ll put together a custom strategy and proposal. No pressure, no obligations - just a clear path forward.',
   },
   {
     q: 'How quickly will I see results?',
-    a: 'It depends on the service. Paid ads can drive leads within days. SEO and organic strategies typically show meaningful traction within 2–3 months. We set clear expectations upfront and report on progress every step of the way.',
+    a: 'It depends on the service. Paid ads can drive leads within days. SEO and organic strategies typically show meaningful traction within 2-3 months. We set clear expectations upfront and report on progress every step of the way.',
   },
   {
     q: 'Do I need to sign a long-term contract?',
@@ -24,7 +24,7 @@ const faqs = [
   },
   {
     q: 'Can you handle everything or just specific services?',
-    a: 'Both. We\'re a full-service partner, so we can manage your entire marketing ecosystem — or plug into specific areas where you need the most help. You choose the scope, we deliver the results.',
+    a: 'Both. We\'re a full-service partner, so we can manage your entire marketing ecosystem - or plug into specific areas where you need the most help. You choose the scope, we deliver the results.',
   },
 ]
 

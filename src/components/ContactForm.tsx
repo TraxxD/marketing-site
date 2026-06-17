@@ -94,7 +94,7 @@ export default function ContactForm() {
           </h2>
           <p className="mt-4 text-lg text-taupe">
             Tell us about your goals and we'll show you exactly how we can
-            help. No commitment, no pressure — just a conversation.
+            help. No commitment, no pressure - just a conversation.
           </p>
         </div>
 
@@ -103,7 +103,7 @@ export default function ContactForm() {
           noValidate
           className="mt-12 space-y-6"
         >
-          {/* Honeypot — visually hidden from humans */}
+          {/* Honeypot - visually hidden from humans */}
           <div className="absolute -left-[9999px]" aria-hidden="true">
             <label htmlFor="website">Website</label>
             <input

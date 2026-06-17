@@ -3,7 +3,7 @@ import { AlertTriangle, CheckCircle, ArrowDown } from 'lucide-react'
 const painPoints = [
   'Spending on ads with no clear return',
   'Inconsistent branding across channels',
-  'No strategy — just scattered tactics',
+  'No strategy - just scattered tactics',
   'Losing leads to competitors who look sharper',
 ]
 
@@ -27,7 +27,7 @@ export default function ValueProp() {
           </h2>
           <p className="mt-4 text-lg text-taupe">
             Most businesses know they need better marketing. The problem is knowing
-            where to start — and who to trust.
+            where to start - and who to trust.
           </p>
         </div>
 

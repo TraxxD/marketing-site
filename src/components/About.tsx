@@ -44,7 +44,7 @@ export default function About() {
                 brand overhaul, we're with you at every stage.
               </p>
               <p>
-                Our mission is straightforward — help you get seen by the
+                Our mission is straightforward - help you get seen by the
                 right people, earn their trust, and turn that trust into
                 lasting revenue.
               </p>

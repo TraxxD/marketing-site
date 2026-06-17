@@ -16,7 +16,7 @@ const services = [
     icon: Megaphone,
     title: 'Paid Advertising',
     description:
-      'Google, Facebook & TikTok Ads — precision-targeted campaigns that put your brand in front of buyers ready to act.',
+      'Google, Facebook & TikTok Ads - precision-targeted campaigns that put your brand in front of buyers ready to act.',
   },
   {
     icon: Share2,
@@ -52,7 +52,7 @@ const services = [
     icon: BarChart3,
     title: 'Strategy & Consulting',
     description:
-      'A clear, data-driven marketing roadmap aligned with your business goals — no guesswork.',
+      'A clear, data-driven marketing roadmap aligned with your business goals - no guesswork.',
   },
   {
     icon: Palette,

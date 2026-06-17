@@ -15,7 +15,7 @@ export default function FinalCTA() {
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-lg text-taupe">
           Every day without a strong marketing strategy is a day your competitors
-          get further ahead. Let's change that — starting now.
+          get further ahead. Let's change that - starting now.
         </p>
         <a
           href="#contact"
