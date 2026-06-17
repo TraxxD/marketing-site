@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(mkdir -p src/components src/lib api)",
+      "Bash(rm -f src/App.css src/index.css)"
+    ]
+  }
+}

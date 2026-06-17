@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* ── DS Marketing Design System ── */
+
+@theme {
+  /* Velvet Night Palette */
+  --color-midnight: #1a1a3e;
+  --color-midnight-light: #252560;
+  --color-plum: #3d2b56;
+  --color-plum-light: #4e3a6b;
+  --color-pearl: #f5f0eb;
+  --color-pearl-dark: #e8e0d8;
+  --color-taupe: #b8a99a;
+  --color-taupe-dark: #9a8b7c;
+  --color-bronze: #c49a6c;
+  --color-gold: #d4a853;
+  --color-gold-light: #e0be7a;
+
+  /* Semantic */
+  --color-surface: #0f0f2a;
+  --color-surface-elevated: #1a1a3e;
+  --color-text-primary: #f5f0eb;
+  --color-text-secondary: #b8a99a;
+  --color-text-muted: #8a7d70;
+  --color-success: #4ade80;
+  --color-error: #f87171;
+
+  /* Typography Scale */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+}
+
+/* Base Styles */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background-color: var(--color-surface);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Selection */
+::selection {
+  background-color: var(--color-bronze);
+  color: var(--color-surface);
+}
+
+/* Focus States */
+*:focus-visible {
+  outline: 2px solid var(--color-bronze);
+  outline-offset: 2px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-plum);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-plum-light);
+}
