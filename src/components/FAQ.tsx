@@ -7,20 +7,28 @@ const faqs = [
     a: 'Every business is different, so we tailor our packages to your specific goals and budget. We\'ll discuss your needs on a free consultation call and provide a transparent proposal - no hidden fees, no surprises.',
   },
   {
-    q: 'Is DS Marketing the right fit for my business?',
-    a: 'If you\'re a business looking to attract higher-quality clients, strengthen your brand, and scale with proven marketing strategies, we\'re built for you. We work across industries - from professional services to e-commerce and beyond.',
+    q: 'How quickly can I see results?',
+    a: 'Paid ads can drive leads within days. SEO and organic strategies typically show meaningful traction within 2-3 months. We set clear expectations upfront and report on progress every step of the way.',
   },
   {
-    q: 'What happens after I reach out?',
-    a: 'We\'ll schedule a brief discovery call to understand your goals, current challenges, and budget. From there, we\'ll put together a custom strategy and proposal. No pressure, no obligations - just a clear path forward.',
+    q: 'What industries do you work with?',
+    a: 'We work across industries - from local service businesses and e-commerce brands to professional services and startups. If you want more qualified leads and better marketing ROI, we can help.',
   },
   {
-    q: 'How quickly will I see results?',
-    a: 'It depends on the service. Paid ads can drive leads within days. SEO and organic strategies typically show meaningful traction within 2-3 months. We set clear expectations upfront and report on progress every step of the way.',
+    q: 'What\'s included in monthly management?',
+    a: 'Depending on your plan: campaign strategy, ad creation and management, content production, performance tracking, weekly/monthly reporting, and ongoing optimization. Everything is laid out clearly before we start.',
   },
   {
-    q: 'Do I need to sign a long-term contract?',
+    q: 'Do you provide reports?',
+    a: 'Yes. You\'ll receive regular performance reports showing exactly where your budget goes and what results it generates. Full transparency, always.',
+  },
+  {
+    q: 'Can I cancel anytime?',
     a: 'We offer flexible arrangements. Some clients prefer month-to-month, others commit to longer engagements for better rates. We earn your loyalty through results, not lock-in contracts.',
+  },
+  {
+    q: 'What\'s the minimum ad budget?',
+    a: 'We recommend a minimum ad spend of $500-1,000/month to see meaningful results, but this depends on your industry and goals. We\'ll advise you on the right budget during our discovery call.',
   },
   {
     q: 'Can you handle everything or just specific services?',

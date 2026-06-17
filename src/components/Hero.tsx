@@ -119,16 +119,16 @@ export default function Hero() {
             </div>
 
             <h1 className="text-4xl font-bold leading-tight tracking-tight text-pearl sm:text-5xl lg:text-6xl">
-              Get Seen. Get Clicks.{' '}
+              Turn Ad Spend Into{' '}
               <span className="bg-gradient-to-r from-bronze to-gold bg-clip-text text-transparent">
-                Get Customers.
+                Qualified Leads and Paying Customers
               </span>
             </h1>
 
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-taupe sm:text-xl">
-              From ads and SEO to content, branding, and web design - we help
-              businesses attract higher-value clients and turn attention into
-              revenue.
+              We help businesses attract more qualified leads through paid
+              advertising, SEO, content marketing, and conversion-focused
+              websites.
             </p>
 
             <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center">
@@ -136,7 +136,7 @@ export default function Hero() {
                 href="#contact"
                 className="group inline-flex items-center justify-center gap-2 rounded-lg bg-bronze px-8 py-4 text-base font-semibold text-surface transition-all hover:bg-gold hover:shadow-xl hover:shadow-bronze/20"
               >
-                Start Growing Today
+                Book a Free Strategy Call
                 <ArrowRight
                   size={18}
                   className="transition-transform group-hover:translate-x-1"
@@ -146,7 +146,7 @@ export default function Hero() {
                 href="#services"
                 className="inline-flex items-center justify-center gap-2 rounded-lg border border-pearl/10 px-8 py-4 text-base font-medium text-pearl transition-all hover:border-pearl/30 hover:bg-pearl/5"
               >
-                See What We Do
+                View Services
               </a>
             </div>
 

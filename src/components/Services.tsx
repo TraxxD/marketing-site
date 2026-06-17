@@ -1,3 +1,4 @@
+import { useScrollReveal } from '../lib/useScrollReveal'
 import {
   Megaphone,
   Globe,
@@ -75,6 +76,8 @@ const services = [
 ]
 
 export default function Services() {
+  const { ref, isVisible } = useScrollReveal()
+
   return (
     <section id="services" className="relative overflow-hidden bg-midnight/30 py-24 sm:py-32">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(196,154,108,0.06)_0%,_transparent_60%)]" />
@@ -96,7 +99,7 @@ export default function Services() {
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        <div ref={ref} className={`mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 reveal-stagger ${isVisible ? 'visible' : ''}`}>
           {services.map(({ icon: Icon, title, description }) => (
             <div
               key={title}

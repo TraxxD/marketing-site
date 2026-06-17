@@ -17,16 +17,24 @@ export default function FinalCTA() {
           Every day without a strong marketing strategy is a day your competitors
           get further ahead. Let's change that - starting now.
         </p>
-        <a
-          href="#contact"
-          className="group mt-8 inline-flex items-center gap-2 rounded-lg bg-bronze px-10 py-4 text-lg font-semibold text-surface transition-all hover:bg-gold hover:shadow-xl hover:shadow-bronze/20"
-        >
-          Get in Touch
-          <ArrowRight
-            size={20}
-            className="transition-transform group-hover:translate-x-1"
-          />
-        </a>
+        <div className="mt-8 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+          <a
+            href="#contact"
+            className="group inline-flex items-center gap-2 rounded-lg bg-bronze px-10 py-4 text-lg font-semibold text-surface transition-all hover:bg-gold hover:shadow-xl hover:shadow-bronze/20"
+          >
+            Book a Free Strategy Call
+            <ArrowRight
+              size={20}
+              className="transition-transform group-hover:translate-x-1"
+            />
+          </a>
+          <a
+            href="mailto:support@ds-marketingroup.com"
+            className="inline-flex items-center gap-2 rounded-lg border border-pearl/10 px-8 py-4 text-base font-medium text-pearl transition-all hover:border-pearl/30 hover:bg-pearl/5"
+          >
+            Email Us Directly
+          </a>
+        </div>
       </div>
     </section>
   )

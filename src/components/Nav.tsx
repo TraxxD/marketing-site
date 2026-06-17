@@ -66,7 +66,7 @@ export default function Nav() {
               href="#contact"
               className="rounded-lg bg-bronze px-5 py-2.5 text-sm font-semibold text-surface transition-all hover:bg-gold hover:shadow-lg hover:shadow-bronze/20"
             >
-              Get in Touch
+              Book Free Consultation
             </a>
           </div>
 
@@ -104,7 +104,7 @@ export default function Nav() {
             onClick={() => setIsOpen(false)}
             className="mt-4 rounded-lg bg-bronze px-8 py-3 text-base font-semibold text-surface transition-all hover:bg-gold"
           >
-            Get in Touch
+            Book Free Consultation
           </a>
         </div>
       </div>
