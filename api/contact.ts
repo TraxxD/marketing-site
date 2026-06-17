@@ -57,7 +57,7 @@ export default async function handler(req: Request): Promise<Response> {
 
   const RESEND_API_KEY = process.env.RESEND_API_KEY
   // TODO: Replace with your verified Resend domain email
-  const YOUR_EMAIL = process.env.CONTACT_EMAIL || 'hello@dsmarketing.com'
+  const YOUR_EMAIL = process.env.CONTACT_EMAIL || 'support@ds-marketingroup.com'
 
   if (!RESEND_API_KEY) {
     return new Response(
@@ -75,7 +75,7 @@ export default async function handler(req: Request): Promise<Response> {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'DS Marketing <noreply@dsmarketing.com>',
+        from: 'DS Marketing <noreply@ds-marketingroup.com>',
         to: YOUR_EMAIL,
         subject: `New Lead: ${body.name}`,
         html: `
@@ -96,7 +96,7 @@ export default async function handler(req: Request): Promise<Response> {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'DS Marketing <noreply@dsmarketing.com>',
+        from: 'DS Marketing <noreply@ds-marketingroup.com>',
         to: body.email,
         subject: "Thanks for reaching out — we'll be in touch!",
         html: `

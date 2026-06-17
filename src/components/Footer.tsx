@@ -13,6 +13,12 @@ export default function Footer() {
             <p className="mt-2 text-sm text-taupe">
               Full-service marketing that delivers results.
             </p>
+            <a
+              href="mailto:support@ds-marketingroup.com"
+              className="mt-1 block text-sm text-bronze transition-colors hover:text-gold"
+            >
+              support@ds-marketingroup.com
+            </a>
           </div>
 
           {/* Links */}
