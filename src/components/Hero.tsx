@@ -12,7 +12,6 @@ const statsPages = [
       { value: '40+', label: 'Qualified Leads / Mo' },
       { value: '22%', label: 'Lower Cost Per Lead' },
     ],
-    progress: 85,
   },
   {
     title: 'Revenue / ROI',
@@ -24,7 +23,6 @@ const statsPages = [
       { value: '$50k+', label: 'Revenue Generated' },
       { value: '42%', label: 'Revenue Growth' },
     ],
-    progress: 72,
   },
   {
     title: 'Advertising',
@@ -36,7 +34,6 @@ const statsPages = [
       { value: '500k+', label: 'Ad Impressions' },
       { value: '25k+', label: 'Clicks Generated' },
     ],
-    progress: 90,
   },
 ]
 
@@ -85,19 +82,6 @@ function StatsCard({
           ))}
         </div>
 
-        {/* Progress bar */}
-        <div className="mt-4">
-          <div className="flex justify-between text-[10px] text-taupe mb-1.5">
-            <span>Performance</span>
-            <span className="text-bronze">{page.progress}%</span>
-          </div>
-          <div className="h-2 w-full overflow-hidden rounded-full bg-pearl/10">
-            <div
-              className="h-full rounded-full bg-gradient-to-r from-bronze to-gold transition-all duration-1000"
-              style={{ width: `${page.progress}%` }}
-            />
-          </div>
-        </div>
       </div>
     </div>
   )
