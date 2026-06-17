@@ -189,19 +189,6 @@ export default function Hero() {
                 ))}
               </div>
 
-              {/* Page dots */}
-              <div className="mt-4 flex justify-center gap-2">
-                {statsPages.map((_, i) => (
-                  <div
-                    key={i}
-                    className={`h-1.5 rounded-full transition-all duration-500 ${
-                      i === currentIndex
-                        ? 'w-6 bg-bronze'
-                        : 'w-1.5 bg-pearl/20'
-                    }`}
-                  />
-                ))}
-              </div>
             </div>
           </div>
         </div>
