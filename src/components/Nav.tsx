@@ -45,7 +45,7 @@ export default function Nav() {
         <div className="flex h-16 items-center justify-between md:h-20">
           {/* Logo */}
           <a
-            href="#"
+            href="/"
             className="text-xl font-bold tracking-tight text-pearl md:text-2xl"
           >
             DS<span className="text-bronze">Marketing</span>
@@ -57,6 +57,10 @@ export default function Nav() {
               <a
                 key={link.href}
                 href={link.href}
+                onClick={(e) => {
+                  e.preventDefault()
+                  document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })
+                }}
                 className="text-sm font-medium text-taupe transition-colors hover:text-pearl"
               >
                 {link.label}
@@ -64,6 +68,10 @@ export default function Nav() {
             ))}
             <a
               href="#contact"
+              onClick={(e) => {
+                e.preventDefault()
+                document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+              }}
               className="rounded-lg bg-bronze px-5 py-2.5 text-sm font-semibold text-surface transition-all hover:bg-gold hover:shadow-lg hover:shadow-bronze/20"
             >
               Book Free Consultation
@@ -93,7 +101,11 @@ export default function Nav() {
             <a
               key={link.href}
               href={link.href}
-              onClick={() => setIsOpen(false)}
+              onClick={(e) => {
+                e.preventDefault()
+                setIsOpen(false)
+                document.querySelector(link.href)?.scrollIntoView({ behavior: 'smooth' })
+              }}
               className="text-lg font-medium text-taupe transition-colors hover:text-pearl"
             >
               {link.label}
@@ -101,7 +113,11 @@ export default function Nav() {
           ))}
           <a
             href="#contact"
-            onClick={() => setIsOpen(false)}
+            onClick={(e) => {
+              e.preventDefault()
+              setIsOpen(false)
+              document.querySelector('#contact')?.scrollIntoView({ behavior: 'smooth' })
+            }}
             className="mt-4 rounded-lg bg-bronze px-8 py-3 text-base font-semibold text-surface transition-all hover:bg-gold"
           >
             Book Free Consultation

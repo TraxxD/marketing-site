@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <a href="#" className="text-xl font-bold tracking-tight text-pearl">
+            <a href="/" className="text-xl font-bold tracking-tight text-pearl">
               DS<span className="text-bronze">Marketing</span>
             </a>
             <p className="mt-2 text-sm text-taupe">
