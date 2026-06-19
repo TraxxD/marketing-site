@@ -39,12 +39,12 @@ export default function About() {
             <div className="mt-6 space-y-4 text-taupe leading-relaxed">
               <p>
                 I founded DS Marketing to help businesses generate more leads
-                through strategic digital marketing and conversion-focused
+                through strategic digital marketing and conversion focused
                 campaigns.
               </p>
               <p>
                 I believe every business deserves marketing that actually works.
-                Not vanity metrics. Not cookie-cutter campaigns. Real strategies
+                Not vanity metrics. Not cookie cutter campaigns. Real strategies
                 that bring in real customers and measurable ROI.
               </p>
               <p>
