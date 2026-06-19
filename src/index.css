@@ -50,15 +50,10 @@ body {
   color: var(--color-text-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-user-select: none;
-  user-select: none;
   cursor: default;
 }
 
-/* Allow selection and cursor in form inputs */
 input, textarea {
-  -webkit-user-select: text;
-  user-select: text;
   cursor: text;
 }
 a, button {
