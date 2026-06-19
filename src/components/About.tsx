@@ -18,13 +18,17 @@ export default function About() {
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
           {/* Photo placeholder */}
           <div className="flex justify-center">
-            <div className="relative h-80 w-72 sm:h-96 sm:w-80">
-              <div className="absolute -inset-4 rounded-full bg-bronze/5 blur-3xl" />
-              <img
-                src="/founder.png"
-                alt="Daniel Simeonov, founder of DS Marketing"
-                className="relative h-full w-full rounded-2xl object-contain object-center"
-              />
+            <div className="relative">
+              <div className="absolute -inset-6 rounded-3xl bg-bronze/5 blur-3xl" />
+              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-b from-surface-elevated/80 to-surface/60 p-1 shadow-2xl shadow-black/30">
+                <div className="overflow-hidden rounded-xl bg-surface">
+                  <img
+                    src="/founder.png"
+                    alt="Daniel Simeonov, founder of DS Marketing"
+                    className="h-80 w-72 object-contain object-center sm:h-96 sm:w-80"
+                  />
+                </div>
+              </div>
             </div>
           </div>
 
