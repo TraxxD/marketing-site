@@ -24,7 +24,7 @@ export default function About() {
                 <img
                   src="/founder.png"
                   alt="Daniel Simeonov, founder of DS Marketing"
-                  className="h-full w-full object-cover object-top"
+                  className="h-full w-full object-contain object-center"
                 />
               </div>
             </div>
