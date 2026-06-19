@@ -25,7 +25,9 @@ export default function About() {
                   <img
                     src="/founder.png"
                     alt="Daniel Simeonov, founder of DS Marketing"
-                    className="h-80 w-72 object-contain object-center sm:h-96 sm:w-80"
+                    className="pointer-events-none select-none h-80 w-72 object-contain object-center sm:h-96 sm:w-80"
+                    draggable={false}
+                    onContextMenu={(e) => e.preventDefault()}
                   />
                 </div>
               </div>
