@@ -1,0 +1,4 @@
+Contact: mailto:support@ds-marketingroup.com
+Preferred-Languages: en
+Canonical: https://ds-marketingroup.com/.well-known/security.txt
+Expires: 2027-06-19T00:00:00.000Z
