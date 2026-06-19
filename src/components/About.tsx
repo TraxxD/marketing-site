@@ -21,11 +21,11 @@ export default function About() {
             <div className="relative">
               <div className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-bronze/20 to-gold/10 blur-2xl" />
               <div className="relative h-80 w-72 overflow-hidden rounded-2xl border border-pearl/10 bg-gradient-to-br from-midnight-light to-plum sm:h-96 sm:w-80">
-                {/* TODO: Replace with your actual photo */}
-                <div className="flex h-full w-full flex-col items-center justify-center gap-3 text-taupe">
-                  <div className="h-20 w-20 rounded-full bg-bronze/20" />
-                  <span className="text-sm">Your photo here</span>
-                </div>
+                <img
+                  src="/founder.png"
+                  alt="Daniel Simeonov, founder of DS Marketing"
+                  className="h-full w-full object-cover object-top"
+                />
               </div>
             </div>
           </div>
